@@ -1,34 +1,37 @@
 import React from "react";
 import ecomerce from '../assets/Ecommerce.png'
+import Finsweet from '../assets/Finsweet.png'
+import Landing from '../assets/Landing.png'
+import Kacchi from '../assets/Kacchi.png'
 // You can add more projects here or replace images/links
 const projectData = [
   {
     title: "E-Commerce",
-    description: "A full-featured e-commerce website using React, Redux, and Firebase.",
+    description: "A full-featured e-commerce website using React, Redux, and Context Api.",
     image: ecomerce, // replace with your screenshot
     demo: "https://cool-otter-a94c73.netlify.app/",
     github: "https://github.com/Ahnaft99/E-commerce-2",
   },
   {
-    title: "E-commerce Website",
-    description: "A full-featured e-commerce website using React, Redux, and Firebase.",
-    image: "https://via.placeholder.com/400x250",
-    demo: "#",
-    github: "#",
+    title: "Finsweet Website",
+    description: "A full-featured website using React, Tailwind CSS, and Java Script.",
+    image: Finsweet,
+    demo: "https://effortless-tulumba-f72aad.netlify.app/",
+    github: "https://github.com/Ahnaft99/Finsweet",
   },
   {
-    title: "To-Do App",
-    description: "A simple and interactive To-Do app built with React and localStorage.",
-    image: "https://via.placeholder.com/400x250",
-    demo: "#",
-    github: "#",
+    title: "Landing Page",
+    description: "A simple landing page using Bootstrap",
+    image: Landing,
+    demo: "https://startling-brigadeiros-82b571.netlify.app/",
+    github: "https://github.com/Ahnaft99/realstatelandingpage",
   },
   {
-    title: "Blog Website",
-    description: "A responsive blog website built with React and Markdown support.",
-    image: "https://via.placeholder.com/400x250",
-    demo: "#",
-    github: "#",
+    title: "Resturant Website design",
+    description: "A  website built with React and Tailwind CSS.",
+    image: Kacchi,
+    demo: "https://silly-mousse-475a4e.netlify.app/item",
+    github: "https://github.com/Ahnaft99/kacchi",
   },
 ];
 
