@@ -1,58 +1,75 @@
-import React from "react";
-import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaLinkedin, FaGithub } from "react-icons/fa";
-import CV from "../assets/CV_Ahnaf Tahmid.pdf"; // 📝 place your CV in src/assets/
+import React from 'react'
+import { IoCall } from "react-icons/io5";
+import { MdEmail } from "react-icons/md";
 
 const Contact = () => {
   return (
-    <section id="contact" className="w-full py-20 bg-gray-50 text-gray-800">
-      <div className="max-w-5xl mx-auto px-6 text-center">
-        {/* Heading */}
-        <h2 className="text-4xl font-bold mb-10 text-blue-500">
-          Contact <span className="text-gray-800">Me</span>
-        </h2>
-
-        {/* Contact Info */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 mb-12">
-          <div className="flex flex-col items-center bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
-            <FaEnvelope className="text-blue-500 text-3xl mb-3" />
-            <h3 className="font-semibold text-lg">Email</h3>
-            <p className="text-gray-600">ahnaf.ent@gmail.com</p>
-          </div>
-
-          <div className="flex flex-col items-center bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
-            <FaPhoneAlt className="text-blue-500 text-3xl mb-3" />
-            <h3 className="font-semibold text-lg">Phone</h3>
-            <p className="text-gray-600">+8801689940198</p>
-          </div>
-
-          <div className="flex flex-col items-center bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
-            <FaMapMarkerAlt className="text-blue-500 text-3xl mb-3" />
-            <h3 className="font-semibold text-lg">Location</h3>
-            <p className="text-gray-600">Halima Monzil 35/11, Zohuri Moholla, Shaymoli, Dhaka, Bangladesh</p>
-          </div>
+    <>
+    <div id="contact" className="bg-[#E9E9E9] lg:py-20 py-10">
+        <div className="lg:w-11/12 w-10/12 mx-auto">
+            <div className="text-center mb-10">
+                <h2 className="font-pops lg:font-extrabold font-bold text-black lg:text-[67px] md:text-[45px] text-[32px] opacity-75 leading-tight">
+                    Let's Get In Touch With Me.
+                </h2>
+            </div>
+            <div className="lg:w-4/6 mx-auto">
+                <form className="flex flex-col items-center gap-5">
+                    <div className="w-full flex flex-col md:flex-row justify-between gap-5">
+                        <input
+                            type="text"
+                            placeholder="Your Name"
+                            className="flex-1 bg-white px-5 py-3 rounded-md outline-none focus:ring-2 focus:ring-blue-400 text-gray-700"
+                        />
+                        <input
+                            type="email"
+                            placeholder="Your Email Address"
+                            className="flex-1 bg-white px-5 py-3 rounded-md outline-none focus:ring-2 focus:ring-blue-400 text-gray-700"
+                        />
+                        <input
+                            type="tel"
+                            placeholder="Mobile Number"
+                            className="flex-1 bg-white px-5 py-3 rounded-md outline-none focus:ring-2 focus:ring-blue-400 text-gray-700"
+                        />
+                    </div>
+                    <textarea
+                        rows="4"
+                        placeholder="How can I help you?"
+                        className="w-full bg-white px-5 py-3 rounded-md outline-none focus:ring-2 focus:ring-blue-400 text-gray-700"
+                    ></textarea>
+                    <button
+                        type="submit"
+                        className="text-white bg-linear-to-r from-blue-500 to-cyan-400 font-semibold tracking-wide py-3 px-10 rounded-sm hover:shadow-lg hover:shadow-blue-400/40 transition-all duration-300 cursor-pointer"
+                    >
+                        SEND MESSAGE
+                    </button>
+                </form>
+            </div>
+            <div className="lg:w-4/6 mx-auto mt-12 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div className="flex items-center w-full md:w-1/2 bg-white border border-gray-300 rounded-md px-8 py-6 gap-5 shadow-sm hover:shadow-md transition-all duration-300">
+                    <IoCall className="text-[30px] text-blue-500" />
+                    <div>
+                        <p className="text-gray-700 text-sm font-medium mb-1">
+                            Phone Number
+                        </p>
+                        <p className="text-black text-lg font-semibold">
+                            +8801689940198
+                        </p>
+                    </div>
+                </div>
+                <div className="flex items-center w-full md:w-1/2 bg-white border border-gray-300 rounded-md px-8 py-6 gap-5 shadow-sm hover:shadow-md transition-all duration-300">
+                    <MdEmail className="text-[30px] text-blue-500" />
+                    <div>
+                        <p className="text-gray-700 text-sm font-medium mb-1">Email</p>
+                        <p className="text-black text-lg font-semibold">
+                            ahnaf.ent@gmail.com
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        {/* Social Links */}
-        <div className="flex justify-center gap-8 text-2xl text-gray-700 mb-10">
-          <a href="https://github.com/ahnaftahmid" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition">
-            <FaGithub />
-          </a>
-          <a href="https://linkedin.com/in/ahnaftahmid" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition">
-            <FaLinkedin />
-          </a>
-        </div>
-
-        {/* Download CV Button */}
-        <a
-          href={CV}
-          download="Ahnaf-Tahmid-CV.pdf"
-          className="inline-block bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-medium transition"
-        >
-          Download CV
-        </a>
-      </div>
-    </section>
-  );
+    </div>
+</>
+);
 };
 
-export default Contact;
+export default Contact

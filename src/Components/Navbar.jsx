@@ -1,69 +1,60 @@
-import { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
-import { Link, useLocation } from "react-router-dom";
+import React, { useState } from "react";
+import { HiMenu, HiX } from "react-icons/hi";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation(); // to highlight active link
-
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const [open, setOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Projects", path: "/projects" }, // lowercase
-    { name: "Contact", path: "/contact" },   // you can add Contact page later
+    { name: "Home", id: "home" },
+    { name: "About", id: "about" },
+    { name: "Projects", id: "project" },
+    { name: "Contact", id: "contact" },
   ];
 
   return (
-    <nav className="fixed w-full bg-gray-600 shadow-md z-50">
-      <div className="max-w-6xl mx-auto px-4 flex justify-between items-center py-4">
-        
+    <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+      <div className="w-11/12 lg:w-10/12 mx-auto flex items-center justify-between h-16">
         {/* Logo */}
-        <h1 className="text-2xl font-bold text-gray-800">
-          Tahmid<span className="text-blue-500">.</span>
-        </h1>
+        <a href="#home" className="text-2xl font-bold text-blue-600">
+          AHNAF<span className="text-cyan-500">.</span>
+        </a>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-8 text-gray-700 font-medium">
+        <ul className="hidden md:flex items-center gap-8 font-medium">
           {navLinks.map((link) => (
-            <li key={link.name}>
-              <Link
-                to={link.path}
-                className={`hover:text-blue-500 transition ${
-                  location.pathname === link.path ? "text-blue-500 font-semibold" : ""
-                }`}
+            <li key={link.id}>
+              <a
+                href={`#${link.id}`}
+                className="text-gray-700 hover:text-blue-500 transition-all"
               >
                 {link.name}
-              </Link>
+              </a>
             </li>
           ))}
         </ul>
 
         {/* Mobile Menu Button */}
-        <div
-          className="md:hidden text-2xl text-gray-700 cursor-pointer"
-          onClick={toggleMenu}
+        <button
+          onClick={() => setOpen(!open)}
+          className="md:hidden text-3xl text-gray-700"
         >
-          {isOpen ? <FaTimes /> : <FaBars />}
-        </div>
+          {open ? <HiX /> : <HiMenu />}
+        </button>
       </div>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-white shadow-md">
-          <ul className="flex flex-col items-center py-4 space-y-4 text-gray-700 font-medium">
+      {open && (
+        <div className="md:hidden bg-white shadow-lg">
+          <ul className="flex flex-col items-center gap-6 py-6 font-medium">
             {navLinks.map((link) => (
-              <li key={link.name}>
-                <Link
-                  to={link.path}
-                  onClick={toggleMenu}
-                  className={`hover:text-blue-500 transition ${
-                    location.pathname === link.path ? "text-blue-500 font-semibold" : ""
-                  }`}
+              <li key={link.id}>
+                <a
+                  href={`#${link.id}`}
+                  onClick={() => setOpen(false)}
+                  className="text-gray-700 hover:text-blue-500 transition-all"
                 >
                   {link.name}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>

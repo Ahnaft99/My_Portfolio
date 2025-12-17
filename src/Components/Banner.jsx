@@ -1,64 +1,87 @@
-import { motion } from "framer-motion";
-import Ahnaf from '../assets/Ahnaf Tahmid.png'
-import bg from '../assets/Background.jpg'
+import { FaTelegramPlane, FaGithub, FaTwitter, FaInstagram, FaFacebookF, FaLinkedinIn,FaWhatsapp  } from "react-icons/fa";
+import bannerImg from "../assets/tahmid.png";
+import CV from "../assets/CV_Ahnaf_Tahmid.pdf"
 
 const Banner = () => {
   return (
-    <section
-      id="home"
-      className="w-full h-screen bg-cover bg-center flex items-center"
-      style={{
-        backgroundImage:
-          `url(${bg})`, 
-          backgroundSize: "contain"
-      }}
-    >
-      <div className="w-full h-full bg-black/60 flex items-center">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 items-center gap-10 text-white">
-          
-          {/* Left Side (Text) */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h3 className="text-lg mb-2 font-medium text-blue-400">
-              Hello, I’m
-            </h3>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Ahnaf Tahmid
-            </h1>
-            <h2 className="text-2xl md:text-3xl font-semibold mb-6">
-              Front-End Developer
-            </h2>
-            <p className="text-gray-200 mb-6 leading-relaxed">
-              I build responsive, interactive, and visually appealing websites
-              using modern web technologies like React, Tailwind, and JavaScript.
-            </p>
-            <a
-              href="#projects"
-              className="bg-blue-500 hover:bg-blue-600 transition px-6 py-3 rounded-lg font-medium"
-            >
-              View My Work
-            </a>
-          </motion.div>
+    <>
+    <section>
+    <div className="lg:py-14 md:py-10 py-4 bg-[#E9E9E9]">
+        <div className="lg:w-10/12 w-11/12 mx-auto">
+          <div className="lg:flex items-center flex-col-reverse lg:flex-row text-center lg:text-left">
+            <div className="lg:w-3/6 w-full mt-10 lg:mt-0">
+              <div>
+                <h2 className="lg:font-extrabold font-bold font-pops text-black lg:text-[67px] md:text-[45px] text-[35px] leading-tight opacity-75">
+                  Hello, I’m <br /> Ahnaf Tahmid
+                </h2>
+                <p className="font-normal font-pops text-black lg:text-[19px] md:text-[17px] text-[16px] pt-3 opacity-75">
+                  Hi! I’m A front end developer – Creating Bold & Brave Interface
+                  Design For Companies All Across The World.
+                </p>
+              </div>
+              <div className="lg:mt-4 mt-3">
+                <div className="flex flex-wrap justify-center lg:justify-start items-center gap-4 lg:gap-6 py-6">
+                <button className="flex items-center gap-2 text-white bg-linear-to-r from-blue-500 to-cyan-400 font-semibold px-6 py-3 rounded-full e hover:shadow-lg hover:shadow-blue-400/40 transition-all duration-300 cursor-pointer">
+                <a href={CV}
+                  download = "Ahnaf Tahmid CV">
+                     Download CV
+                    
+                </a>
+                <FaTelegramPlane className="text-lg" />
+                  </button>
 
-          {/* Right Side (Profile Image) */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex justify-center"
-          >
-            <img
-              src={Ahnaf} 
-              alt="Profile"
-              className="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-blue-500 shadow-lg object-cover bg-white"
-            />
-          </motion.div>
+                  <p className="font-pops text-black text-[17px] opacity-75 font-medium whitespace-nowrap">
+                    Check Out My :
+                  </p>
+
+                  <div className="flex items-center gap-3 lg:gap-1">
+                    <a
+                      href="https://github.com/Ahnaft99"
+                      target="_blank"
+                      className="border border-black rounded-full p-3 hover:bg-black hover:text-white transition-all duration-300"
+                    >
+                      <FaGithub />
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/ahnaf-tahmid-448945320/"
+                      className="border border-black rounded-full p-3 hover:bg-black hover:text-white transition-all duration-300"
+                    >
+                      <FaLinkedinIn />
+                    </a>
+                 
+                    <a
+                      href="https://www.facebook.com/ahnaf.tahmid.733/"
+                      target="_blank"
+                      className="border border-black rounded-full p-3 hover:bg-black hover:text-white transition-all duration-300"
+                    >
+                      <FaFacebookF />
+                    </a>
+                    <a
+                      href="https://www.instagram.com/theahnaftahmid/"
+                      target="_blank"
+                      className="border border-black rounded-full p-3 hover:bg-black hover:text-white transition-all duration-300"
+                    >
+                      <FaInstagram />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="lg:w-3/6 w-full flex justify-center">
+              <div className="p-1 bg-linear-to-r from-blue-500 to-cyan-400 rounded-full inline-block lg:block">
+                <img
+                  src={bannerImg}
+                  alt="bannerImg"
+                  className="w-[250px] md:w-[300px] lg:w-[350px] rounded-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+      
+    </>
   );
 };
 

@@ -1,74 +1,95 @@
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import React from "react";
+import {
+  FaGithub,
+  FaLinkedinIn,
+  FaFacebookF,
+  FaInstagram,
+} from "react-icons/fa";
 
 const Footer = () => {
+  const navLinks = [
+    { name: "Home", id: "home" },
+    { name: "About", id: "about" },
+    { name: "Projects", id: "project" },
+    { name: "Contact", id: "contact" },
+  ];
+
   return (
-    <footer className="bg-gray-900 text-gray-300 py-10">
-      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-        
-        {/* Logo / Name */}
-        <div className="text-white text-2xl font-bold">
-          Tahmid<span className="text-blue-500">.</span>
+    <footer className="bg-[#111827] text-gray-300 pt-12">
+      <div className="w-11/12 lg:w-10/12 mx-auto">
+        {/* Top */}
+        <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8 border-b border-gray-700 pb-8">
+          
+          {/* Brand */}
+          <div className="text-center md:text-left">
+            <h2 className="text-2xl font-bold text-white">
+              AHNAF<span className="text-cyan-400">.</span>
+            </h2>
+            <p className="mt-3 text-sm max-w-xs">
+              Front-end developer crafting clean, modern & responsive web
+              experiences.
+            </p>
+          </div>
+
+          {/* Links */}
+          <div className="flex flex-col items-center md:items-start gap-3">
+            <h3 className="text-white font-semibold">Quick Links</h3>
+            {navLinks.map((link) => (
+              <a
+                key={link.id}
+                href={`#${link.id}`}
+                className="hover:text-cyan-400 transition-all"
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+
+          {/* Social */}
+          <div className="flex flex-col items-center md:items-start gap-3">
+            <h3 className="text-white font-semibold">Follow Me</h3>
+            <div className="flex gap-4">
+              <a
+                href="https://github.com/Ahnaft99"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 border border-gray-600 rounded-full hover:bg-white hover:text-black transition-all"
+              >
+                <FaGithub />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/ahnaf-tahmid-448945320/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 border border-gray-600 rounded-full hover:bg-white hover:text-black transition-all"
+              >
+                <FaLinkedinIn />
+              </a>
+              <a
+                href="https://www.facebook.com/ahnaf.tahmid.733/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 border border-gray-600 rounded-full hover:bg-white hover:text-black transition-all"
+              >
+                <FaFacebookF />
+              </a>
+              <a
+                href="https://www.instagram.com/theahnaftahmid/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 border border-gray-600 rounded-full hover:bg-white hover:text-black transition-all"
+              >
+                <FaInstagram />
+              </a>
+            </div>
+          </div>
         </div>
 
-        {/* Navigation Links */}
-        <ul className="flex flex-col md:flex-row gap-4 md:gap-8 text-gray-300 font-medium">
-          <li>
-            <Link to="/" className="hover:text-blue-500 transition">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/about" className="hover:text-blue-500 transition">
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to="/projects" className="hover:text-blue-500 transition">
-              Projects
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact" className="hover:text-blue-500 transition">
-              Contact
-            </Link>
-          </li>
-        </ul>
-
-        {/* Social Icons */}
-        <div className="flex gap-6 text-gray-300 text-xl">
-          <a
-            href="https://github.com/Ahnaft99"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-blue-500 transition"
-          >
-            <FaGithub />
-          </a>
-          <a
-            href="https://linkedin.com/in/yourusername"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-blue-500 transition"
-          >
-            <FaLinkedin />
-          </a>
-          <a
-            href="mailto:ahnaf.ent@gmail.com"
-            className="hover:text-blue-500 transition"
-          >
-            <FaEnvelope />
-          </a>
+        {/* Bottom */}
+        <div className="text-center py-6 text-sm text-gray-400">
+          © {new Date().getFullYear()} Ahnaf Tahmid. All rights reserved.
         </div>
       </div>
-
-      {/* Divider */}
-      <div className="border-t border-gray-700 mt-6"></div>
-
-      {/* Copyright */}
-      <p className="text-center text-gray-500 mt-4 text-sm">
-        &copy; {new Date().getFullYear()} Ahnaf Tahmid. All rights reserved.
-      </p>
     </footer>
   );
 };
