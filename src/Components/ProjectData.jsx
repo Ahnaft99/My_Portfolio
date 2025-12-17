@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import ecomerce from "../assets/Ecommerce.png";
 import Finsweet from "../assets/Finsweet.png";
 import Landing from "../assets/Landing.png";
-import Kacchi from "../assets/Kacchi.png";
+import qu from "../assets/qu.png";
 
 const projectData = [
   {
@@ -28,11 +28,11 @@ const projectData = [
     github: "https://github.com/Ahnaft99/realstatelandingpage",
   },
   {
-    title: "Restaurant Website",
-    description: "A website built with React and Tailwind CSS.",
-    image: Kacchi,
-    demo: "https://silly-mousse-475a4e.netlify.app/item",
-    github: "https://github.com/Ahnaft99/kacchi",
+    title: "Quarter",
+    description: "A website built with Next js and Tailwind CSS.",
+    image: qu,
+    demo: "https://vercel.com/ahnaft99s-projects/quater-nextjs/D5gxFkqm4HbohKxEQWM7JhfPZFKF",
+    github: "https://github.com/Ahnaft99/Quater-nextjs",
   },
 ];
 
