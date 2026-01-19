@@ -8,6 +8,7 @@ import Contact from '../Components/Contact'
 import Skill from '../Components/Skill'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
+import Certification from '../Components/Certification'
 
 
 
@@ -22,13 +23,16 @@ const Home = () => {
  <section id='about'>
  <About/>
  </section>
+
 <section id='skill'>
 <Skill/>
 </section>
  <section id='project'>
  <ProjectData/>
  </section>
-
+ <section>
+  <Certification/>
+ </section>
   <section id='contact'>
   <Contact/>
   </section>

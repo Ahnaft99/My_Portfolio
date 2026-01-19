@@ -1,6 +1,6 @@
 import { FaTelegramPlane, FaGithub, FaTwitter, FaInstagram, FaFacebookF, FaLinkedinIn,FaWhatsapp  } from "react-icons/fa";
 import bannerImg from "../assets/tahmid.png";
-import CV from "../assets/Ahnaf Tahmid 3.pdf"
+import CV from "../assets/CV_Ahnaf.pdf"
 
 const Banner = () => {
   return (
